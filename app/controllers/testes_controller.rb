@@ -4,7 +4,7 @@ class TestesController < ApplicationController
   def index
     @mensagem = 'A guerra vai começar'
 
-    render json: @mensagem
+    render :json => @mensagem
   end
 
   # GET /testes/1
@@ -13,7 +13,7 @@ class TestesController < ApplicationController
     #@testis = Teste.find(params[:id])
     @mensagem = 'Em construção'
 
-    render json: @mensagem
+    render :json => @mensagem
   end
 
   # POST /testes
@@ -22,9 +22,9 @@ class TestesController < ApplicationController
     @testis = Teste.new(params[:testis])
 
     if @testis.save
-      render json: @testis, status: :created, location: @testis
+      render :json => @testis, :status => :created, :location => @testis
     else
-      render json: @testis.errors, status: :unprocessable_entity
+      render :json => @testis.errors, :status => :unprocessable_entity
     end
   end
 
@@ -36,7 +36,7 @@ class TestesController < ApplicationController
     if @testis.update(params[:testis])
       head :no_content
     else
-      render json: @testis.errors, status: :unprocessable_entity
+      render :json => @testis.errors, :status => :unprocessable_entity
     end
   end
 

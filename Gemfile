@@ -8,6 +8,7 @@ gem 'spring', :group => :development
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'pry-debugger'
 end
 
 group :production do
