@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
     n_players = params[:n_players]
     nome = params[:nome]
     room = {
-      :idsala => 1,
+      :idroom => 1,
       :nome => params[:nome]
     }
     render :json => room.to_json
