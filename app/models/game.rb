@@ -1,4 +1,4 @@
-class Game
+class Game < ActiveRecord::Base
   include ActiveModel::Model
   attr_accessor :n_pla, :n_terr, :n_obj
 

@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
 
   def connect
     game = Game.find(params[:game_id])
-
+    players_json = JSON.parse(game.players)
   end
 
 end
