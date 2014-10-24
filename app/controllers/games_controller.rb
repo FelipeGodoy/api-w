@@ -4,15 +4,20 @@ class GamesController < ApplicationController
   end
 
   def new
-    ##url = localhost.ntp.uff.br:3000/games/new?nome=war1&jogador=jefferson&qtd_ter=42&qtd_obj=3&qtd_jog=3
+    ##url = http://localhost:3000/games/new?n_objectives=14&n_territories=42&n_players=5
     if params
-      hash_ter = draw_territory n_players, n_territories
-      hash_obj = draw_objectives n_players, n_objectives
+
+      n_territories = params[:n_territories]
+      n_objectives = params[:n_objectives]
+      n_players = params[:n_players]
       ##TODO: criar forma de armazenar id_jogo
       #aqui se cria um jogo
+      hash_ter = draw_territory n_players, n_territories
+      hash_obj = draw_objectives n_players, n_objectives
       arr_odr = player_order n_players
+      @game = Game.new(:n_pla => n_players,:n_terr => n_territories,:n_obj => n_objectives )
       game = {
-          :id_jogo => 1,
+          :id_game => Game.id,
           :territories => hash_ter,
           :objectives => hash_obj,
           :player_order => arr_odr
