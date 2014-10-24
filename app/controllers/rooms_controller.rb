@@ -1,24 +1,17 @@
 class RoomsController < ApplicationController
-  def new
-    #url =
-    n_territories = params[:n_territories]
-    n_objectives = params[:n_objectives]
-    n_players = params[:n_players]
-    nome = params[:nome]
-    room = {
-      :idsala => 1,
-      :nome => params[:nome]
-    }
-    render :json => room.to_json
 
+  def create
+    game = Game.create params[:game]
+    render :json => game.to_json
+  end
+
+  def index
+    render :json => game.all.to_json
   end
 
   def connect
-    id_jogador = params[:id_jogador]
+    game = Game.find(params[:game_id])
 
-    connect = {}
-
-    render :json => connect.to_json
   end
 
 
