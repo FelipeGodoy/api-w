@@ -15,7 +15,7 @@ class GamesController < ApplicationController
       hash_ter = draw_territory n_players, n_territories
       hash_obj = draw_objectives n_players, n_objectives
       arr_odr = player_order n_players
-      @game = Game.new(:n_pla => n_players,:n_terr => n_territories,:n_obj => n_objectives )
+      @game = Game.create(:n_pla => n_players,:n_terr => n_territories,:n_obj => n_objectives )
       game = {
           :id_game => Game.id,
           :territories => hash_ter,

@@ -1,6 +1,5 @@
 class Game < ActiveRecord::Base
-  include ActiveModel::Model
-  attr_accessor :n_pla, :n_terr, :n_obj
+  self.table_name = 'games'
 
   @@id = 0
 
@@ -12,4 +11,9 @@ class Game < ActiveRecord::Base
     @@id
   end
 
+  private
+
+  def connect_game id
+    game.update(:id => id,:active => 1)
+  end
 end
