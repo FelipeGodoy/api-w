@@ -1592,3 +1592,7 @@ AbstractController::ActionNotFound (The action 'show' could not be found for Roo
 
 
   Rendered /home/jefferson/.rvm/gems/ruby-2.1.1@api-w/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mGame Load (10.0ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"

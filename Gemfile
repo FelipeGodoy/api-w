@@ -6,6 +6,8 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
 group :development, :test do
   gem 'sqlite3'
   gem 'pry-debugger'
