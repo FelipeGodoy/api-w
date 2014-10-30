@@ -15,21 +15,22 @@ ActiveRecord::Schema.define(version: 20141023230132) do
 
   create_table "games", force: true do |t|
     t.string   "name"
-    t.string   "infos"
-    t.string   "players"
     t.integer  "n_territories"
     t.integer  "n_goals"
     t.boolean  "active"
     t.boolean  "in_room"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "infos"
   end
 
   create_table "players", force: true do |t|
     t.string   "name"
+    t.integer  "game_id"
     t.integer  "type"
     t.integer  "goal_id"
-    t.integer  "id_ingame"
+    t.integer  "order"
+    t.integer  "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

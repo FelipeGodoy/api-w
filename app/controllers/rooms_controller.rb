@@ -1,16 +1,12 @@
 class RoomsController < ApplicationController
 
-  #url = http://http://localhost:3000/rooms/new?players=6&n_territories=42&name=jogo1&n_goals=15
-
-  def new
-    if params[:name] && params[:n_territories] && params[:players]
-      game = Game.create ({:name => params[:name],
-                           :n_territories => params[:n_territories],
-                           :players => params[:players],
-                           :n_goals => params[:n_goals],
-                           :active => 0})
-      render :json => game.to_json
-    end
+  #url = http://http://localhost:3000/rooms/new?game={players=6&n_territories=42&name=jogo1&n_goals=15}
+  
+  def create
+    g = Game.new(params[:game])
+    g.in_room = true
+    g.save
+    render :json => game.to_json
   end
 
   def index
@@ -18,12 +14,16 @@ class RoomsController < ApplicationController
   end
 
   def connect
-    if params[:id]
       game = Game.find(params[:game_id])
-      game.connect_game game.id
-      render game.to_json
-    end
-    #players_json = JSON.parse(game.players)
+      if(game.present? && game.in_room?)
+        p = Player.new(params[:player])
+        p.game = game
+        p.color = game.raffle_color
+        p.save
+        g_json = JSON.parse game.to_json
+        g_json["new_player"] = JSON.parse p.to_json
+        render :json => g_json.to_json
+      end
   end
 
 end

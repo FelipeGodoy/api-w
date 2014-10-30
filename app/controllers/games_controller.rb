@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    render :json => 'Jogos'
+    render :json => Game.actives.to_json
   end
 
   def new
