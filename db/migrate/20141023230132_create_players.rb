@@ -7,6 +7,7 @@ class CreatePlayers < ActiveRecord::Migration
       t.integer :goal_id
       t.integer :order
       t.integer :color
+      t.string :init_territories
       t.timestamps
     end
   end
