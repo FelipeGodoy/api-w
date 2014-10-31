@@ -4,8 +4,14 @@ class GamesController < ApplicationController
   end
   
   def start
-    game = Game.find pamrams[:game_id]
+    game = Game.in_room.find params[:game_id]
     game.start
+    render :json => game.full_json
+  end
+  
+  def close
+    game = Game.find params[:game_id]
+    game.close
     render :json => game.full_json
   end
   

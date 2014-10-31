@@ -1,4 +1,5 @@
 class Game < ActiveRecord::Base
+  
   has_many :players
   has_many :shots
   
@@ -17,6 +18,12 @@ class Game < ActiveRecord::Base
     self.raffle_order
     self.in_room = false
     self.active = true
+    self.save
+  end
+  
+  def close
+    self.in_room = false
+    self.active = false
     self.save
   end
   
