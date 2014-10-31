@@ -24,7 +24,7 @@ class GamesController < ApplicationController
   def add_shot
     game = Game.actives.find params[:game_id]
     index = Integer(params[:shot_id])
-    shots = game.shots.where("Shot.in_game_id > ?", index)
+    shots = game.shots.where("index_game_id > ?", index)
     if(index == shots.count + 1)
       shot = Shot.create(:game => game, :id_in_game => index, :content => params[:content])
       render :json => shot.to_json
