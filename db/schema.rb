@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20141030190913) do
   create_table "players", force: true do |t|
     t.string   "name"
     t.integer  "game_id"
-    t.integer  "type"
+    t.integer  "type_id"
     t.integer  "goal_id"
     t.integer  "order"
     t.integer  "color"

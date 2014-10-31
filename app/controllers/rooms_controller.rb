@@ -4,10 +4,9 @@ class RoomsController < ApplicationController
   
   def create
     params.permit!
-    g = Game.new(params[:game])
-    g.in_room = true
-#    binding.pry
-    g.save
+    game = Game.new(params[:game])
+    game.in_room = true
+    game.save
     render :json => game.to_json
   end
 
@@ -17,6 +16,7 @@ class RoomsController < ApplicationController
 
   def connect
     game = Game.in_room.find(params[:game_id])
+#    binding.pry
     if game.present?
       params.permit!
       p = Player.new(params[:player])

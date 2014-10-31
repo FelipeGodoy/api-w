@@ -28,13 +28,11 @@ class Game < ActiveRecord::Base
   end
   
   def full_json
-    players = JSON.parse self.players
+    players = JSON.parse self.players.to_json
     json = JSON.parse self.to_json
     json["players"] = players
     json.to_json
   end
-  
-  private
   
   def raffle_goals
     colors = self.players.map(&:color)
@@ -48,8 +46,9 @@ class Game < ActiveRecord::Base
   def raffle_territories
     territories = self.n_territories.times.to_a.shuffle
     players = self.players
+    players.each{|p| p.init_territories = ""}
     territories.each_with_index do |territory, index|
-      players[index % players.count].init_territories += ","+territory
+      players[index % players.count].init_territories += ","+territory.to_s
     end
     players.each do |p|
       p.init_territories[0] = '['

@@ -31,6 +31,7 @@ GEM
     awesome_print (1.2.0)
     builder (3.2.2)
     coderay (1.1.0)
+    colorize (0.7.3)
     columnize (0.8.9)
     debugger (1.6.8)
       columnize (>= 0.3.1)
@@ -117,6 +118,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  colorize
   pg
   pry-debugger
   rails (= 4.1.6)
@@ -125,3 +127,4 @@ DEPENDENCIES
   spring
   sqlite3
   tzinfo-data
+  win32console

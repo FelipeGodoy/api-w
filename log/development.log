@@ -2191,3 +2191,887 @@ NameError (undefined local variable or method `game' for #<RoomsController:0x638
   Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
   Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
   Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (47.8ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2014-10-31 11:44:50 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (15.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 140ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2014-10-31 11:45:30 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 47ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2014-10-31 11:45:50 -0200
+
+AbstractController::ActionNotFound (The action 'show' could not be found for RoomsController):
+  actionpack (4.1.6) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (62.4ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2014-10-31 11:45:56 -0200
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 11:46:13 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 11:46:21 -0200
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+
+
+Started GET "/games.json" for 127.0.0.1 at 2014-10-31 12:02:45 -0200
+Processing by GamesController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/room.json" for 127.0.0.1 at 2014-10-31 12:02:51 -0200
+
+ActionController::RoutingError (No route matches [GET] "/room.json"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (240.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (372.0ms)
+
+
+Started GET "/room" for 127.0.0.1 at 2014-10-31 12:03:02 -0200
+
+ActionController::RoutingError (No route matches [GET] "/room"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (89.0ms)
+
+
+Started GET "/room.json" for 127.0.0.1 at 2014-10-31 12:03:09 -0200
+
+ActionController::RoutingError (No route matches [GET] "/room.json"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.0ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2014-10-31 12:03:17 -0200
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (1.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 5ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 12:03:23 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 3ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/room.json" for 127.0.0.1 at 2014-10-31 12:03:37 -0200
+
+ActionController::RoutingError (No route matches [GET] "/room.json"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (15.6ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.0ms)
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 12:03:53 -0200
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 12:03:59 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2014-10-31 12:04:02 -0200
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 12:04:05 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (15.6ms)[0m  [1mDELETE FROM "games"[0m
+  [1m[35mSQL (15.6ms)[0m  DELETE FROM "players"
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2014-10-31 12:07:18 -0200
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"n_goals"=>"10"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("created_at", "in_room", "n_goals", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-31 14:07:18.433161"], ["in_room", "t"], ["n_goals", 10], ["updated_at", "2014-10-31 14:07:18.433161"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+Completed 500 Internal Server Error in 78ms
+
+NameError (undefined local variable or method `game' for #<RoomsController:0x515aa50>):
+  app/controllers/rooms_controller.rb:11:in `create'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.4ms)
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2014-10-31 12:07:39 -0200
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"n_goals"=>"10"}}
+  [1m[36mGame Load (15.6ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "games"
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "games"[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "games"
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2014-10-31 12:10:03 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"n_goals"=>"10"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("created_at", "in_room", "n_goals", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-31 14:10:26.703094"], ["in_room", "t"], ["n_goals", 10], ["updated_at", "2014-10-31 14:10:26.703094"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 22605ms
+
+NameError (undefined local variable or method `game' for #<RoomsController:0x4e1f158>):
+  app/controllers/rooms_controller.rb:12:in `create'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.6ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (78.0ms)
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2014-10-31 12:10:57 -0200
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"n_goals"=>"10", "n_territories"=>"42"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "games" ("created_at", "in_room", "n_goals", "n_territories", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-31 14:11:31.168608"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["updated_at", "2014-10-31 14:11:31.168608"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 33538ms
+
+NameError (undefined local variable or method `game' for #<RoomsController:0x4d5b150>):
+  app/controllers/rooms_controller.rb:12:in `create'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+  [1m[36mGame Load (15.6ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "games"
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2014-10-31 12:13:06 -0200
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"n_goals"=>"10", "n_territories"=>"42"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("created_at", "in_room", "n_goals", "n_territories", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-31 14:13:11.306986"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["updated_at", "2014-10-31 14:13:11.306986"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 4446ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 12:14:17 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 47ms (Views: 0.0ms | ActiveRecord: 15.6ms)
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "games" SET "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 8  [["in_room", "f"], ["updated_at", "2014-10-31 14:14:42.503147"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 12:14:44 -0200
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "games" SET "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 8[0m  [["in_room", "t"], ["updated_at", "2014-10-31 14:14:53.330566"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 12:14:54 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2014-10-31 12:17:29 -0200
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"joao", "type"=>"1"}}
+Completed 404 Not Found in 16ms
+
+ActiveRecord::RecordNotFound (Couldn't find Game without an ID):
+  app/controllers/rooms_controller.rb:18:in `connect'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (78.0ms)
+
+
+Started GET "/rooms.json" for 127.0.0.1 at 2014-10-31 12:18:07 -0200
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 16ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2014-10-31 12:18:23 -0200
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"joao", "type"=>"1"}, "game_id"=>"8"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 8]]
+Completed 500 Internal Server Error in 31ms
+
+ActiveRecord::SubclassNotFound (Invalid single-table inheritance type: 1 is not a subclass of Player):
+  app/controllers/rooms_controller.rb:21:in `connect'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (31.2ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (78.0ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2014-10-31 12:19:09 -0200
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"joao", "type"=>"1"}, "game_id"=>"8"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 8]]
+Completed 500 Internal Server Error in 105786ms
+
+ActiveRecord::SubclassNotFound (Invalid single-table inheritance type: 1 is not a subclass of Player):
+  app/controllers/rooms_controller.rb:22:in `connect'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.8ms)
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (15.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTestes (20141005125815)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "testes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141005125815"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Migrating to CreateGames (20141023224615)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "n_territories" integer, "n_goals" integer, "active" boolean, "in_room" boolean, "created_at" datetime, "updated_at" datetime, "infos" text) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023224615"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+Migrating to CreatePlayers (20141023230132)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "game_id" integer, "type_id" integer, "goal_id" integer, "order" integer, "color" integer, "init_territories" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023230132"]]
+  [1m[35m (46.8ms)[0m  commit transaction
+Migrating to CreateShots (20141030190913)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "shots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "game_id" integer, "index_in_game" integer, "content" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141030190913"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2014-10-31 12:22:28 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"n_goals"=>"10"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("created_at", "in_room", "n_goals", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-31 14:22:28.812976"], ["in_room", "t"], ["n_goals", 10], ["updated_at", "2014-10-31 14:22:28.812976"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+Completed 200 OK in 94ms (Views: 0.0ms | ActiveRecord: 31.2ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2014-10-31 12:23:04 -0200
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"joao", "type_id"=>"1"}, "game_id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["color", 4], ["created_at", "2014-10-31 14:23:48.508719"], ["game_id", 1], ["name", "joao"], ["type_id", 1], ["updated_at", "2014-10-31 14:23:48.508719"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 43732ms (Views: 0.0ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2014-10-31 12:24:19 -0200
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"maria", "type_id"=>"1"}, "game_id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["color", 6], ["created_at", "2014-10-31 14:24:21.706577"], ["game_id", 1], ["name", "maria"], ["type_id", 1], ["updated_at", "2014-10-31 14:24:21.706577"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 2449ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2014-10-31 12:24:41 -0200
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"jose", "type_id"=>"1"}, "game_id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["color", 1], ["created_at", "2014-10-31 14:24:42.034413"], ["game_id", 1], ["name", "jose"], ["type_id", 1], ["updated_at", "2014-10-31 14:24:42.034413"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 47ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/game/start.json" for 127.0.0.1 at 2014-10-31 12:25:42 -0200
+
+ActionController::RoutingError (No route matches [POST] "/game/start.json"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (31.2ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (109.2ms)
+
+
+Started POST "/games/start.json" for 127.0.0.1 at 2014-10-31 12:26:15 -0200
+Processing by GamesController#start as JSON
+  Parameters: {"game_id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (private method `raffle_goals' called for #<Game:0x59f9d00>):
+  app/models/game.rb:16:in `start'
+  app/controllers/games_controller.rb:8:in `start'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 1  [["goal_id", 7], ["updated_at", "2014-10-31 14:27:40.792928"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["goal_id", 0], ["updated_at", "2014-10-31 14:27:40.792928"]]
+  [1m[35m (46.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (15.6ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 3  [["goal_id", 0], ["updated_at", "2014-10-31 14:27:40.839729"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"   ORDER BY "games"."id" DESC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "games" SET "n_territories" = ?, "updated_at" = ? WHERE "games"."id" = 1[0m  [["n_territories", 42], ["updated_at", "2014-10-31 14:28:43.861240"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["goal_id", 0], ["updated_at", "2014-10-31 14:28:47.028045"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["goal_id", 7], ["updated_at", "2014-10-31 14:28:47.043646"]]
+  [1m[36m (15.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 3[0m  [["goal_id", 3], ["updated_at", "2014-10-31 14:28:47.059246"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["goal_id", 3], ["updated_at", "2014-10-31 14:29:51.553160"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["goal_id", 2], ["updated_at", "2014-10-31 14:29:51.568760"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (15.6ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 1  [["goal_id", 8], ["updated_at", "2014-10-31 14:30:14.719403"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["goal_id", 0], ["updated_at", "2014-10-31 14:30:14.719403"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 3  [["goal_id", 9], ["updated_at", "2014-10-31 14:30:14.735003"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (15.6ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 1  [["goal_id", 0], ["updated_at", "2014-10-31 14:31:40.493156"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["goal_id", 9], ["updated_at", "2014-10-31 14:31:40.508756"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 3  [["goal_id", 5], ["updated_at", "2014-10-31 14:31:40.524356"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["init_territories", "[17,21,39,28,38,9,31,12,34,25,4,37,7,16]"], ["updated_at", "2014-10-31 14:31:40.586756"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (15.6ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["init_territories", "[14,40,13,24,0,41,23,32,2,3,36,35,19,18]"], ["updated_at", "2014-10-31 14:31:40.586756"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 3[0m  [["init_territories", "[22,5,1,10,11,26,27,30,6,33,15,29,20,8]"], ["updated_at", "2014-10-31 14:31:40.602356"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (15.6ms)[0m  UPDATE "players" SET "order" = ? WHERE "players"."id" = 3  [["order", 1]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["order", 2], ["updated_at", "2014-10-31 14:31:40.617956"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["order", 3], ["updated_at", "2014-10-31 14:31:40.633556"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (31.2ms)[0m  [1mUPDATE "games" SET "active" = ?, "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 1[0m  [["active", "t"], ["in_room", "f"], ["updated_at", "2014-10-31 14:31:40.633556"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT  "players".* FROM "players"   ORDER BY "players"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 1  [["goal_id", 5], ["updated_at", "2014-10-31 14:39:06.456238"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["goal_id", 2], ["updated_at", "2014-10-31 14:39:06.471238"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 3  [["goal_id", 2], ["updated_at", "2014-10-31 14:39:06.480239"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["init_territories", "[3,34,23,20,35,41,11,13,16,38,5,22,1,15]"], ["updated_at", "2014-10-31 14:39:06.544243"]]
+  [1m[35m (22.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["init_territories", "[36,10,25,30,14,9,24,2,12,8,7,40,37,29]"], ["updated_at", "2014-10-31 14:39:06.571244"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 3[0m  [["init_territories", "[31,28,0,6,17,21,19,32,26,27,4,18,39,33]"], ["updated_at", "2014-10-31 14:39:06.578245"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["order", 2], ["updated_at", "2014-10-31 14:39:06.587245"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["order", 3], ["updated_at", "2014-10-31 14:39:06.594245"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["goal_id", 9], ["updated_at", "2014-10-31 14:40:27.554876"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["goal_id", 7], ["updated_at", "2014-10-31 14:40:27.564877"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 3[0m  [["goal_id", 0], ["updated_at", "2014-10-31 14:40:27.574877"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 1  [["init_territories", "[5,26,29,0,4,21,7,32,39,35,37,38,36,40]"], ["updated_at", "2014-10-31 14:40:27.647882"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["init_territories", "[9,18,8,34,16,14,33,20,2,17,12,13,25,41]"], ["updated_at", "2014-10-31 14:40:27.657882"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 3  [["init_territories", "[19,10,27,23,1,30,31,6,22,11,15,24,3,28]"], ["updated_at", "2014-10-31 14:40:27.665883"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["order", 1], ["updated_at", "2014-10-31 14:40:27.673883"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 3  [["order", 2], ["updated_at", "2014-10-31 14:40:27.681883"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["order", 3], ["updated_at", "2014-10-31 14:40:27.688884"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 1  [["goal_id", 8], ["updated_at", "2014-10-31 14:40:40.004588"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["goal_id", 9], ["updated_at", "2014-10-31 14:40:40.018589"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 3  [["goal_id", 5], ["updated_at", "2014-10-31 14:40:40.029590"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["init_territories", "[21,37,26,5,22,2,7,15,24,34,33,16,27,12]"], ["updated_at", "2014-10-31 14:40:40.125595"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["init_territories", "[8,3,25,11,17,0,4,1,35,39,36,30,9,38]"], ["updated_at", "2014-10-31 14:40:40.132596"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 3[0m  [["init_territories", "[13,23,19,10,18,31,40,32,6,41,29,20,28,14]"], ["updated_at", "2014-10-31 14:40:40.140596"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 3  [["order", 1], ["updated_at", "2014-10-31 14:40:40.147596"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["order", 2], ["updated_at", "2014-10-31 14:40:40.154597"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (24.0ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 1  [["order", 3], ["updated_at", "2014-10-31 14:40:40.162597"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
