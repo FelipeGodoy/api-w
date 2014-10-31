@@ -3714,3 +3714,10 @@ SQLite3::SQLException: no such column: Shot.index_in_game: SELECT "shots".* FROM
 SQLite3::SQLException: no such column: SHOT.index_in_game: SELECT "shots".* FROM "shots"  WHERE (SHOT.index_in_game > 0)
   [1m[36mShot Load (1.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > '0')[0m  [["game_id", 1]]
 Completed 200 OK in 73015ms (Views: 0.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/rooms/" for 127.0.0.1 at 2014-10-31 14:02:59 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.5ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 89ms (Views: 0.3ms | ActiveRecord: 0.9ms)
