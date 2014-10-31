@@ -17,7 +17,7 @@ class GamesController < ApplicationController
   
   def get_shots
     game = Game.actives.find params[:game_id]
-    shots = game.shots.where("Shot.in_game_id > ?", params[:shot_id])
+    shots = game.shots.where("index_in_game > ?", params[:shot_id])
     render :json => shots.to_json
   end
   

@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root :to =>"rooms#index", defaults: {format: :json}
-  resources :games,:rooms , defaults: {format: :json}
+  get 'games/shots' => 'games#get_shots', defaults: {format: :json}
   post 'rooms/connect' => 'rooms#connect', defaults: {format: :json}
   post 'rooms/disconnect' => 'rooms#disconnect', defaults: {format: :json}
   post 'games/start' => 'games#start', defaults: {format: :json}
   post 'games/close' => 'games#close', defaults: {format: :json}
-  get 'game/shots' => 'games#get_shots', defaults: {format: :json}
-  post 'game/shots/create' => 'games#add_shots', defaults: {format: :json}
+  post 'games/shots' => 'games#add_shots', defaults: {format: :json}
+  resources :games,:rooms,:except=>[:show] , defaults: {format: :json}
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
