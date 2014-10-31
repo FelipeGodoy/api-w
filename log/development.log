@@ -3714,3 +3714,315 @@ SQLite3::SQLException: no such column: Shot.index_in_game: SELECT "shots".* FROM
 SQLite3::SQLException: no such column: SHOT.index_in_game: SELECT "shots".* FROM "shots"  WHERE (SHOT.index_in_game > 0)
   [1m[36mShot Load (1.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > '0')[0m  [["game_id", 1]]
 Completed 200 OK in 73015ms (Views: 0.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/games.json" for 127.0.0.1 at 2014-10-31 14:04:17 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 100ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "games" SET "name" = ?, "updated_at" = ? WHERE "games"."id" = 1[0m  [["name", "jogao"], ["updated_at", "2014-10-31 16:05:23.907635"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+
+
+Started GET "/games.json" for 127.0.0.1 at 2014-10-31 14:05:25 -0200
+Processing by GamesController#index as JSON
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:06:04 -0200
+
+AbstractController::ActionNotFound (The action 'add_shots' could not be found for GamesController):
+  actionpack (4.1.6) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (7.0ms)
+
+
+Started GET "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:06:36 -0200
+Processing by GamesController#get_shots as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"0"}
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShot Load (0.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > '0')[0m  [["game_id", 1]]
+Completed 200 OK in 55ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:08:49 -0200
+
+AbstractController::ActionNotFound (The action 'add_shots' could not be found for GamesController):
+  actionpack (4.1.6) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.0ms)
+
+
+Started GET "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:09:01 -0200
+Processing by GamesController#get_shots as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"0"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShot Load (1.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > '0')[0m  [["game_id", 1]]
+Completed 200 OK in 15ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:09:05 -0200
+
+AbstractController::ActionNotFound (The action 'add_shots' could not be found for GamesController):
+  actionpack (4.1.6) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (2.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:12:00 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"1", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ? AND (index_game_id > 1)[0m  [["game_id", 1]]
+SQLite3::SQLException: no such column: index_game_id: SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ? AND (index_game_id > 1)
+Completed 500 Internal Server Error in 165ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: index_game_id: SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ? AND (index_game_id > 1)):
+  app/controllers/games_controller.rb:28:in `add_shot'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (81.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:12:44 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"1", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (27.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > 1)[0m  [["game_id", 1]]
+Completed 500 Internal Server Error in 141ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: id_in_game):
+  app/controllers/games_controller.rb:29:in `add_shot'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:13:49 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"1", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > 1)[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "aaaaaaaaaaaaaa"], ["created_at", "2014-10-31 16:13:49.360612"], ["game_id", 1], ["index_in_game", 1], ["updated_at", "2014-10-31 16:13:49.360612"]]
+  [1m[35m (25.0ms)[0m  commit transaction
+Completed 200 OK in 79ms (Views: 0.0ms | ActiveRecord: 30.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:13:56 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"1", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > 1)  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "aaaaaaaaaaaaaa"], ["created_at", "2014-10-31 16:13:56.209004"], ["game_id", 1], ["index_in_game", 1], ["updated_at", "2014-10-31 16:13:56.209004"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 27ms (Views: 0.0ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:14:06 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"1", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > 1)[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "aaaaaaaaaaaaaa"], ["created_at", "2014-10-31 16:14:06.490592"], ["game_id", 1], ["index_in_game", 1], ["updated_at", "2014-10-31 16:14:06.490592"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+Completed 200 OK in 16ms (Views: 0.0ms | ActiveRecord: 6.0ms)
+  [1m[36mSQL (10.0ms)[0m  [1mDELETE FROM "shots"[0m
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:15:59 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"1", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "aaaaaaaaaaaaaa"], ["created_at", "2014-10-31 16:15:59.645064"], ["game_id", 1], ["index_in_game", 1], ["updated_at", "2014-10-31 16:15:59.645064"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 60ms (Views: 0.0ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:16:03 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"1", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 4ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:16:11 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"2", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "aaaaaaaaaaaaaa"], ["created_at", "2014-10-31 16:16:11.795759"], ["game_id", 1], ["index_in_game", 2], ["updated_at", "2014-10-31 16:16:11.795759"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Completed 200 OK in 17ms (Views: 1.0ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:16:15 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"3", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "aaaaaaaaaaaaaa"], ["created_at", "2014-10-31 16:16:15.844991"], ["game_id", 1], ["index_in_game", 3], ["updated_at", "2014-10-31 16:16:15.844991"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 25ms (Views: 0.0ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:16:29 -0200
+Processing by GamesController#get_shots as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"0", "content"=>"aaaaaaaaaaaaaa"}
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShot Load (0.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > '0')[0m  [["game_id", 1]]
+Completed 200 OK in 11ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+  [1m[35mSQL (5.0ms)[0m  DELETE FROM "shots"

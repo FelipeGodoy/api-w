@@ -24,12 +24,12 @@ class GamesController < ApplicationController
   def add_shot
     game = Game.actives.find params[:game_id]
     index = Integer(params[:shot_id])
-    shots = game.shots.where("index_game_id > ?", index)
-    if(index == shots.count + 1)
-      shot = Shot.create(:game => game, :id_in_game => index, :content => params[:content])
+    shots_count = game.shots.count
+    if(index == shots_count + 1)
+      shot = Shot.create(:game => game, :index_in_game => index, :content => params[:content])
       render :json => shot.to_json
     else
-      render :json => {:error => "Wrong shot id"}
+      render :json => {:error => "Wrong shot id"}.to_json
     end
   end
 

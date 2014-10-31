@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'rooms/disconnect' => 'rooms#disconnect', defaults: {format: :json}
   post 'games/start' => 'games#start', defaults: {format: :json}
   post 'games/close' => 'games#close', defaults: {format: :json}
-  post 'games/shots' => 'games#add_shots', defaults: {format: :json}
+  post 'games/shots' => 'games#add_shot', defaults: {format: :json}
   resources :games,:rooms,:except=>[:show] , defaults: {format: :json}
   
   # The priority is based upon order of creation: first created -> highest priority.
