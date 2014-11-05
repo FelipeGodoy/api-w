@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root :to =>"rooms#index", defaults: {format: :json}
+  get 'shots/reset' => 'games#reset_shots', defaults: {format: :json}
   get 'games/shots' => 'games#get_shots', defaults: {format: :json}
   post 'rooms/connect' => 'rooms#connect', defaults: {format: :json}
   post 'rooms/disconnect' => 'rooms#disconnect', defaults: {format: :json}

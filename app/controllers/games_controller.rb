@@ -26,6 +26,14 @@ class GamesController < ApplicationController
     render :json => shots.to_json
   end
   
+  def reset_shots
+    if Shot.delete_all
+      render :json => {:success => true}.to_json
+    else
+      render :json => {:error => "Can't delete shots!"}.to_json
+    end
+  end
+  
   def add_shot
     game = Game.actives.find params[:game_id]
     index = Integer(params[:shot_id])
