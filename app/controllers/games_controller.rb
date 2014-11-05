@@ -40,7 +40,7 @@ class GamesController < ApplicationController
     shots_count = game.shots.count
     if(index == shots_count + 1)
       shot = Shot.create(:game => game, :index_in_game => index, :content => params[:content])
-      render :json => {:success => true, :id => shot.id}.to_json
+      render :json => {:success => true, :id => shot.index_in_game}.to_json
     else
       render :json => {:error => "Wrong shot id"}.to_json
     end
