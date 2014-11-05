@@ -4026,3 +4026,1981 @@ Processing by GamesController#get_shots as JSON
   [1m[36mShot Load (0.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > '0')[0m  [["game_id", 1]]
 Completed 200 OK in 11ms (Views: 0.0ms | ActiveRecord: 1.0ms)
   [1m[35mSQL (5.0ms)[0m  DELETE FROM "shots"
+
+
+Started GET "/games/1" for 127.0.0.1 at 2014-10-31 14:37:39 -0200
+
+ActionController::RoutingError (No route matches [GET] "/games/1"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (160.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (360.0ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2014-10-31 14:37:48 -0200
+
+ActionController::RoutingError (No route matches [GET] "/games/1.json"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (80.0ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2014-10-31 14:40:19 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 343ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:41:28 -0200
+Processing by GamesController#get_shots as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"0"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShot Load (0.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > '0')[0m  [["game_id", 1]]
+Completed 200 OK in 60ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:41:45 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"0", "content"=>"asdfasdfasdfasdasdfasdfasdf"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:41:51 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"1", "content"=>"asdfasdfasdfasdasdfasdfasdf"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "asdfasdfasdfasdasdfasdfasdf"], ["created_at", "2014-10-31 16:41:52.013327"], ["game_id", 1], ["index_in_game", 1], ["updated_at", "2014-10-31 16:41:52.013327"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 112ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:41:57 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"1", "content"=>"aasdfasdfasdfasdfasdfasdf"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 1]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:42:01 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"2", "content"=>"aasdfasdfasdfasdfasdfasdf"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (10.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "aasdfasdfasdfasdfasdfasdf"], ["created_at", "2014-10-31 16:42:01.535345"], ["game_id", 1], ["index_in_game", 2], ["updated_at", "2014-10-31 16:42:01.535345"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/games/shots.json" for 127.0.0.1 at 2014-10-31 14:42:06 -0200
+Processing by GamesController#get_shots as JSON
+  Parameters: {"game_id"=>"1", "shot_id"=>"0"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShot Load (0.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > '0')[0m  [["game_id", 1]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mGame Load (20.0ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35mSQL (10.0ms)[0m  DELETE FROM "games"
+  [1m[36mSQL (10.0ms)[0m  [1mDELETE FROM "players"[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "shots"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "games" ("active", "created_at", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["active", "t"], ["created_at", "2014-11-05 18:38:31.109223"], ["n_goals", 8], ["n_territories", 42], ["name", "jogao"], ["updated_at", "2014-11-05 18:38:31.109223"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["color", 1], ["created_at", "2014-11-05 18:39:23.687299"], ["goal_id", 6], ["name", "jogador1"], ["order", 1], ["type_id", 0], ["updated_at", "2014-11-05 18:39:23.687299"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["color", 2], ["created_at", "2014-11-05 18:40:04.031359"], ["goal_id", 6], ["name", "jogador2"], ["order", 2], ["type_id", 0], ["updated_at", "2014-11-05 18:40:04.031359"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 16:58:31 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 101ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2014-11-05 17:05:22 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (1.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 53ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/games/shots" for 127.0.0.1 at 2014-11-05 17:06:49 -0200
+Processing by GamesController#get_shots as JSON
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find Game without an ID):
+  app/controllers/games_controller.rb:24:in `get_shots'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (168.0ms)
+
+
+Started GET "/games/shots?game_id=2" for 127.0.0.1 at 2014-11-05 17:07:10 -0200
+Processing by GamesController#get_shots as JSON
+  Parameters: {"game_id"=>"2"}
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShot Load (0.0ms)[0m  SELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > NULL)  [["game_id", 2]]
+Completed 200 OK in 57ms (Views: 0.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:09:57 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 44ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:11:59 -0200
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:12:57 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 40ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:13:23 -0200
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:14:07 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'
+Completed 200 OK in 70ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:14:37 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":3,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (30.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":3,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:15:13.650879"], ["game_id", 2], ["index_in_game", 1], ["updated_at", "2014-11-05 19:15:13.650879"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 300ms (Views: 0.0ms | ActiveRecord: 30.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":2,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":4,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":11,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":12,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:13 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":19,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":13,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":29,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (10.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":15,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":10,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":6,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":18,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":22,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":39,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":40,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":28,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":36,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (10.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":23,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":32,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":34,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":35,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":21,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":33,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (10.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":20,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":31,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":24,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (10.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":25,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":27,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":30,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":41,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":26,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":17,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":14,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:15:15 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":37,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mShot Load (0.0ms)[0m  [1mSELECT "shots".* FROM "shots"[0m
+  [1m[35mSQL (10.0ms)[0m  DELETE FROM "shots"
+
+
+Started GET "/roms" for 127.0.0.1 at 2014-11-05 17:20:16 -0200
+
+ActionController::RoutingError (No route matches [GET] "/roms"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (181.0ms)
+  Rendered c:/RailsInstaller/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (335.0ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2014-11-05 17:20:23 -0200
+Processing by RoomsController#index as JSON
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 5ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2014-11-05 17:20:27 -0200
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/shots?game_id=2" for 127.0.0.1 at 2014-11-05 17:20:41 -0200
+Processing by GamesController#get_shots as JSON
+  Parameters: {"game_id"=>"2"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShot Load (1.0ms)[0m  SELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > NULL)  [["game_id", 2]]
+Completed 200 OK in 5ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:31:29 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:31:29.759739"], ["game_id", 2], ["index_in_game", 1], ["updated_at", "2014-11-05 19:31:29.759739"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:31:49 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (10.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:31:52 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":2,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:31:55 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":3,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:32:01 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":4,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (10.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:32:04 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:32:07 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":6,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (10.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:32:10 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:32:37 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:32:41 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:32:44 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":10,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:00 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":11,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:03 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":12,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:06 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":13,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:09 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":14,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:12 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":15,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:16 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:19 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":17,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":18,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:25 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":19,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:28 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":20,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:32 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":21,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:35 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":22,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:38 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":23,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:41 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":24,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:44 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":25,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:48 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":26,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[35mGame Load (10.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:33:51 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":27,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mShot Load (0.0ms)[0m  [1mSELECT "shots".* FROM "shots"[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"
+  [1m[36mSQL (10.0ms)[0m  [1mDELETE FROM "shots"[0m
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:35:02 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":29,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":29,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:37:21.169490"], ["game_id", 2], ["index_in_game", 1], ["updated_at", "2014-11-05 19:37:21.169490"]]
+  [1m[35m (20.0ms)[0m  commit transaction
+Completed 200 OK in 138293ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:37:21 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (10.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 8539ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:37:44 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 9143ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35mSQL (10.0ms)[0m  DELETE FROM "shots"
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:38:23 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:38:31.488631"], ["game_id", 2], ["index_in_game", 1], ["updated_at", "2014-11-05 19:38:31.488631"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 7225ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:38:53 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 62458ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:40:02 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "shot_id"=>"1", "content"=>"{\"targetTerritoryIndex\":2,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 171338ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:42:54 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"01"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:44:07 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"01"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 130ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:45:21 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"01"}
+  [1m[35mGame Load (10.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:45:25 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":2,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"01"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (10.0ms)[0m  [1mDELETE FROM "shots"[0m
+
+
+Started GET "/games/shots?game_id=2" for 127.0.0.1 at 2014-11-05 17:46:49 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#get_shots as JSON
+  Parameters: {"game_id"=>"2"}
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShot Load (1.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ? AND (index_in_game > NULL)[0m  [["game_id", 2]]
+Completed 200 OK in 138ms (Views: 0.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:47:30 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"01"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:47:30.361339"], ["game_id", 2], ["index_in_game", 1], ["updated_at", "2014-11-05 19:47:30.361339"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 90ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:47:33 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:47:36 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":2,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:47:40 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":3,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:47:43 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":4,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:47:46 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:47:49 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":6,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:47:52 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:47:55 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35mSQL (10.0ms)[0m  DELETE FROM "shots"
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:48:42 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"01"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:48:57.029463"], ["game_id", 2], ["index_in_game", 1], ["updated_at", "2014-11-05 19:48:57.029463"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 14196ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:49:03 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 22801ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (10.0ms)[0m  [1mDELETE FROM "shots"[0m
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:17 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"1"}
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:18.783620"], ["game_id", 2], ["index_in_game", 1], ["updated_at", "2014-11-05 19:50:18.783620"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 340ms (Views: 0.0ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:24 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"2"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:24.574629"], ["game_id", 2], ["index_in_game", 2], ["updated_at", "2014-11-05 19:50:24.574629"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 80ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:27 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":2,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"3"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":2,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:27.774634"], ["game_id", 2], ["index_in_game", 3], ["updated_at", "2014-11-05 19:50:27.774634"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:30 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":3,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"4"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":3,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:31.024638"], ["game_id", 2], ["index_in_game", 4], ["updated_at", "2014-11-05 19:50:31.024638"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 80ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:34 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":4,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"5"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":4,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:34.226644"], ["game_id", 2], ["index_in_game", 5], ["updated_at", "2014-11-05 19:50:34.226644"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:37 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"6"}
+  [1m[36mGame Load (10.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:37.424649"], ["game_id", 2], ["index_in_game", 6], ["updated_at", "2014-11-05 19:50:37.424649"]]
+  [1m[36m (20.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 40ms (Views: 0.0ms | ActiveRecord: 30.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:40 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":6,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"7"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":6,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:40.654653"], ["game_id", 2], ["index_in_game", 7], ["updated_at", "2014-11-05 19:50:40.654653"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:43 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"8"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (40.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:43.856659"], ["game_id", 2], ["index_in_game", 8], ["updated_at", "2014-11-05 19:50:43.856659"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 50ms (Views: 0.0ms | ActiveRecord: 50.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:47 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"9"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (10.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:47.148665"], ["game_id", 2], ["index_in_game", 9], ["updated_at", "2014-11-05 19:50:47.148665"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:50 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"10"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:50.374670"], ["game_id", 2], ["index_in_game", 10], ["updated_at", "2014-11-05 19:50:50.374670"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:53 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":10,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":10,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:53.584675"], ["game_id", 2], ["index_in_game", 11], ["updated_at", "2014-11-05 19:50:53.584675"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:56 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":11,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"12"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":11,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:56.784679"], ["game_id", 2], ["index_in_game", 12], ["updated_at", "2014-11-05 19:50:56.784679"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:50:59 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":12,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"13"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":12,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:50:59.994684"], ["game_id", 2], ["index_in_game", 13], ["updated_at", "2014-11-05 19:50:59.994684"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:03 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":13,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"14"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":13,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:51:03.281691"], ["game_id", 2], ["index_in_game", 14], ["updated_at", "2014-11-05 19:51:03.281691"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:06 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":14,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"15"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":14,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:51:06.503698"], ["game_id", 2], ["index_in_game", 15], ["updated_at", "2014-11-05 19:51:06.503698"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:09 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":15,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"16"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":15,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:51:09.705711"], ["game_id", 2], ["index_in_game", 16], ["updated_at", "2014-11-05 19:51:09.705711"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:12 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"17"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:51:12.907717"], ["game_id", 2], ["index_in_game", 17], ["updated_at", "2014-11-05 19:51:12.907717"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:16 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":17,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"18"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":17,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:51:16.119723"], ["game_id", 2], ["index_in_game", 18], ["updated_at", "2014-11-05 19:51:16.119723"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:19 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":18,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"19"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":18,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:51:19.358728"], ["game_id", 2], ["index_in_game", 19], ["updated_at", "2014-11-05 19:51:19.358728"]]
+  [1m[35m (20.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:22 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":19,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"20"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":19,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:51:22.563735"], ["game_id", 2], ["index_in_game", 20], ["updated_at", "2014-11-05 19:51:22.563735"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:25 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":20,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"21"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":20,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:51:25.763739"], ["game_id", 2], ["index_in_game", 21], ["updated_at", "2014-11-05 19:51:25.763739"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:28 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":21,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"22"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":21,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:28.963744"], ["game_id", 2], ["index_in_game", 22], ["updated_at", "2014-11-05 19:51:28.963744"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:32 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":22,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"23"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":22,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:32.183748"], ["game_id", 2], ["index_in_game", 23], ["updated_at", "2014-11-05 19:51:32.183748"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 80ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:35 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":23,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"24"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":23,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:35.453753"], ["game_id", 2], ["index_in_game", 24], ["updated_at", "2014-11-05 19:51:35.453753"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:38 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":24,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"25"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":24,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:38.663757"], ["game_id", 2], ["index_in_game", 25], ["updated_at", "2014-11-05 19:51:38.663757"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:41 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":25,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"26"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":25,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:41.843762"], ["game_id", 2], ["index_in_game", 26], ["updated_at", "2014-11-05 19:51:41.843762"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:45 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":26,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"27"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":26,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:45.053766"], ["game_id", 2], ["index_in_game", 27], ["updated_at", "2014-11-05 19:51:45.053766"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:48 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":27,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"28"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":27,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:48.316772"], ["game_id", 2], ["index_in_game", 28], ["updated_at", "2014-11-05 19:51:48.316772"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 40ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:51 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":28,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"29"}
+  [1m[35mGame Load (10.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":28,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:51.526776"], ["game_id", 2], ["index_in_game", 29], ["updated_at", "2014-11-05 19:51:51.526776"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:54 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":29,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"30"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":29,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:54.746781"], ["game_id", 2], ["index_in_game", 30], ["updated_at", "2014-11-05 19:51:54.746781"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:51:57 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":30,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"31"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":30,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:51:57.968786"], ["game_id", 2], ["index_in_game", 31], ["updated_at", "2014-11-05 19:51:57.968786"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 40ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:52:01 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":31,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"32"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":31,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:52:01.158791"], ["game_id", 2], ["index_in_game", 32], ["updated_at", "2014-11-05 19:52:01.158791"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:52:04 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":32,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"33"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":32,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:52:04.398795"], ["game_id", 2], ["index_in_game", 33], ["updated_at", "2014-11-05 19:52:04.398795"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+  [1m[36mSQL (20.0ms)[0m  [1mDELETE FROM "shots"[0m
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:53:44 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":0,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:53:44.089941"], ["game_id", 2], ["index_in_game", 1], ["updated_at", "2014-11-05 19:53:44.089941"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:53:47 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"2"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":1,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:53:47.337947"], ["game_id", 2], ["index_in_game", 2], ["updated_at", "2014-11-05 19:53:47.337947"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:53:50 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":2,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"3"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (10.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":2,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:53:50.547951"], ["game_id", 2], ["index_in_game", 3], ["updated_at", "2014-11-05 19:53:50.547951"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:53:53 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":3,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"4"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":3,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 19:53:53.777956"], ["game_id", 2], ["index_in_game", 4], ["updated_at", "2014-11-05 19:53:53.777956"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:57:12 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:57:19 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (10.0ms)[0m  [1mDELETE FROM "shots"[0m
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:01 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:01.635355"], ["game_id", 2], ["index_in_game", 1], ["updated_at", "2014-11-05 19:58:01.635355"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:04 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"2"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:04.862360"], ["game_id", 2], ["index_in_game", 2], ["updated_at", "2014-11-05 19:58:04.862360"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:08 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"3"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:08.092365"], ["game_id", 2], ["index_in_game", 3], ["updated_at", "2014-11-05 19:58:08.092365"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:11 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"4"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:11.323371"], ["game_id", 2], ["index_in_game", 4], ["updated_at", "2014-11-05 19:58:11.323371"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:14 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"5"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:14.601378"], ["game_id", 2], ["index_in_game", 5], ["updated_at", "2014-11-05 19:58:14.601378"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:17 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"6"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:17.831382"], ["game_id", 2], ["index_in_game", 6], ["updated_at", "2014-11-05 19:58:17.831382"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:21 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"7"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:21.051387"], ["game_id", 2], ["index_in_game", 7], ["updated_at", "2014-11-05 19:58:21.051387"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:24 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"8"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:24.271391"], ["game_id", 2], ["index_in_game", 8], ["updated_at", "2014-11-05 19:58:24.271391"]]
+  [1m[35m (20.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:27 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"9"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":8,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:27.481396"], ["game_id", 2], ["index_in_game", 9], ["updated_at", "2014-11-05 19:58:27.481396"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:30 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"10"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:30.751400"], ["game_id", 2], ["index_in_game", 10], ["updated_at", "2014-11-05 19:58:30.751400"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:33 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"11"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:33.931405"], ["game_id", 2], ["index_in_game", 11], ["updated_at", "2014-11-05 19:58:33.931405"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 40ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:37 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"12"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:37.151409"], ["game_id", 2], ["index_in_game", 12], ["updated_at", "2014-11-05 19:58:37.151409"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:40 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"13"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:40.377414"], ["game_id", 2], ["index_in_game", 13], ["updated_at", "2014-11-05 19:58:40.377414"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:43 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"14"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:43.617419"], ["game_id", 2], ["index_in_game", 14], ["updated_at", "2014-11-05 19:58:43.617419"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:46 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"15"}
+  [1m[36mGame Load (10.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:46.807423"], ["game_id", 2], ["index_in_game", 15], ["updated_at", "2014-11-05 19:58:46.807423"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:58:49 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"16"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:58:50.007428"], ["game_id", 2], ["index_in_game", 16], ["updated_at", "2014-11-05 19:58:50.007428"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:20 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"17"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:20.532471"], ["game_id", 2], ["index_in_game", 17], ["updated_at", "2014-11-05 19:59:20.532471"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:23 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"18"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":9,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:23.812475"], ["game_id", 2], ["index_in_game", 18], ["updated_at", "2014-11-05 19:59:23.812475"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 70ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:27 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"19"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:27.022480"], ["game_id", 2], ["index_in_game", 19], ["updated_at", "2014-11-05 19:59:27.022480"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:30 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"20"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:30.232484"], ["game_id", 2], ["index_in_game", 20], ["updated_at", "2014-11-05 19:59:30.232484"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:33 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"21"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:33.442489"], ["game_id", 2], ["index_in_game", 21], ["updated_at", "2014-11-05 19:59:33.442489"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:36 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"22"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:36.662493"], ["game_id", 2], ["index_in_game", 22], ["updated_at", "2014-11-05 19:59:36.662493"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:39 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"23"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (10.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:39.938498"], ["game_id", 2], ["index_in_game", 23], ["updated_at", "2014-11-05 19:59:39.938498"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:43 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"24"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:43.178503"], ["game_id", 2], ["index_in_game", 24], ["updated_at", "2014-11-05 19:59:43.178503"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:46 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"25"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:46.398507"], ["game_id", 2], ["index_in_game", 25], ["updated_at", "2014-11-05 19:59:46.398507"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:49 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"26"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":5,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:49.648512"], ["game_id", 2], ["index_in_game", 26], ["updated_at", "2014-11-05 19:59:49.648512"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:52 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"27"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:52.848516"], ["game_id", 2], ["index_in_game", 27], ["updated_at", "2014-11-05 19:59:52.848516"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:56 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"28"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:56.118521"], ["game_id", 2], ["index_in_game", 28], ["updated_at", "2014-11-05 19:59:56.118521"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 17:59:59 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"29"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 19:59:59.338525"], ["game_id", 2], ["index_in_game", 29], ["updated_at", "2014-11-05 19:59:59.338525"]]
+  [1m[36m (30.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 40ms (Views: 0.0ms | ActiveRecord: 30.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:02 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"30"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:02.582534"], ["game_id", 2], ["index_in_game", 30], ["updated_at", "2014-11-05 20:00:02.582534"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:05 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"31"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:05.792539"], ["game_id", 2], ["index_in_game", 31], ["updated_at", "2014-11-05 20:00:05.792539"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:08 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"32"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:09.002543"], ["game_id", 2], ["index_in_game", 32], ["updated_at", "2014-11-05 20:00:09.002543"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:12 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"33"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:12.275548"], ["game_id", 2], ["index_in_game", 33], ["updated_at", "2014-11-05 20:00:12.275548"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 30ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:15 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"34"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:15.485553"], ["game_id", 2], ["index_in_game", 34], ["updated_at", "2014-11-05 20:00:15.485553"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:18 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"35"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":7,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:18.685557"], ["game_id", 2], ["index_in_game", 35], ["updated_at", "2014-11-05 20:00:18.685557"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:21 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"36"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:21.895562"], ["game_id", 2], ["index_in_game", 36], ["updated_at", "2014-11-05 20:00:21.895562"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:25 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"37"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:25.095566"], ["game_id", 2], ["index_in_game", 37], ["updated_at", "2014-11-05 20:00:25.095566"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:28 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"38"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:28.375571"], ["game_id", 2], ["index_in_game", 38], ["updated_at", "2014-11-05 20:00:28.375571"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:31 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"39"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:31.585575"], ["game_id", 2], ["index_in_game", 39], ["updated_at", "2014-11-05 20:00:31.585575"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:34 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}", "shot_id"=>"40"}
+  [1m[35mGame Load (10.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":16,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":0}"], ["created_at", "2014-11-05 20:00:34.795580"], ["game_id", 2], ["index_in_game", 40], ["updated_at", "2014-11-05 20:00:34.795580"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:37 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"41"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 20:00:38.005584"], ["game_id", 2], ["index_in_game", 41], ["updated_at", "2014-11-05 20:00:38.005584"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:41 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"42"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 20:00:41.257589"], ["game_id", 2], ["index_in_game", 42], ["updated_at", "2014-11-05 20:00:41.257589"]]
+  [1m[35m (30.0ms)[0m  commit transaction
+Completed 200 OK in 40ms (Views: 0.0ms | ActiveRecord: 30.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:44 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"43"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 20:00:44.487594"], ["game_id", 2], ["index_in_game", 43], ["updated_at", "2014-11-05 20:00:44.487594"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:47 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"44"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 20:00:47.697598"], ["game_id", 2], ["index_in_game", 44], ["updated_at", "2014-11-05 20:00:47.697598"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:50 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"45"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 20:00:50.907603"], ["game_id", 2], ["index_in_game", 45], ["updated_at", "2014-11-05 20:00:50.907603"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:54 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"46"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 20:00:54.117607"], ["game_id", 2], ["index_in_game", 46], ["updated_at", "2014-11-05 20:00:54.117607"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/games/shots" for 127.0.0.1 at 2014-11-05 18:00:57 -0200
+Processing by GamesController#add_shot as JSON
+  Parameters: {"game_id"=>"2", "content"=>"{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}", "shot_id"=>"47"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."active" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "shots"  WHERE "shots"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "shots" ("content", "created_at", "game_id", "index_in_game", "updated_at") VALUES (?, ?, ?, ?, ?)  [["content", "{\"targetTerritoryIndex\":38,\"troopsCount\":1,\"shotType\":0,\"playerIndex\":1}"], ["created_at", "2014-11-05 20:00:57.377612"], ["game_id", 2], ["index_in_game", 47], ["updated_at", "2014-11-05 20:00:57.377612"]]
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (10.0ms)[0m  [1mDELETE FROM "shots"[0m
