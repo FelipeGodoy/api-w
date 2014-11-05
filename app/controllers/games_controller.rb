@@ -39,7 +39,11 @@ class GamesController < ApplicationController
     index = Integer(params[:shot_id])
     shots_count = game.shots.count
     if(index == shots_count + 1)
-      shot = Shot.create(:game => game, :index_in_game => index, :content => params[:content])
+      shot = nil
+      params[:shots].each_with_index do |param_shot,ind|
+        shot = Shot.create(:game => game, :index_in_game => index, :content => params["shots"][ind.to_s]["content"])
+        index +=1
+      end
       render :json => {:success => true, :id => shot.index_in_game}.to_json
     else
       render :json => {:error => "Wrong shot id"}.to_json
