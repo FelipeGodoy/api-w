@@ -29,6 +29,7 @@ class Game < ActiveRecord::Base
   
   def full_json
     players = JSON.parse self.players.to_json
+	players.each do |player| player["init_territories"] = eval(player["init_territories"]) end
     json = JSON.parse self.to_json
     json["players"] = players
     json.to_json
