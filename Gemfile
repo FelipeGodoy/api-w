@@ -14,6 +14,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'pry-debugger'
   gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'mocha'
 end
 
 group :production do
