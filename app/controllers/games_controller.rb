@@ -23,7 +23,9 @@ class GamesController < ApplicationController
   def get_shots
     game = Game.actives.find params[:game_id]
     shots = game.shots.where("index_in_game > ?", params[:shot_id])
-    render :json => shots.to_json
+    shots_json = JSON.parse shots.to_json
+    shots_json.each{|shot_json| shot_json["content"] = JSON.parse shot_json["content"]}
+    render :json => shots_json.to_json
   end
   
   def reset_shots
