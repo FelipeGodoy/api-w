@@ -46,3 +46,78 @@ Processing by GamesController#index as HTML
   [1m[36mGame Load (0.2ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
 Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.6ms)
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 218ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-11-07 03:40:56.505103"], ["updated_at", "2014-11-07 03:40:56.505103"]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)  [["color", 0], ["created_at", "2014-11-07 03:40:56.516104"], ["game_id", 1], ["updated_at", "2014-11-07 03:40:56.516104"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 85ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-11-07 03:41:58.036623"], ["updated_at", "2014-11-07 03:41:58.036623"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)  [["color", 0], ["created_at", "2014-11-07 03:41:58.048623"], ["game_id", 1], ["updated_at", "2014-11-07 03:41:58.048623"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 85ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-11-07 03:43:35.881219"], ["updated_at", "2014-11-07 03:43:35.881219"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)  [["color", 0], ["created_at", "2014-11-07 03:43:35.892220"], ["game_id", 1], ["updated_at", "2014-11-07 03:43:35.892220"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 87ms (Views: 0.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-11-07 03:44:33.365507"], ["updated_at", "2014-11-07 03:44:33.365507"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)  [["color", 0], ["created_at", "2014-11-07 03:44:33.378508"], ["game_id", 1], ["updated_at", "2014-11-07 03:44:33.378508"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-11-07 03:45:33.982974"], ["updated_at", "2014-11-07 03:45:33.982974"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["color", 0], ["created_at", "2014-11-07 03:45:34.059978"], ["game_id", 1], ["updated_at", "2014-11-07 03:45:34.059978"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-11-07 03:48:41.189682"], ["updated_at", "2014-11-07 03:48:41.189682"]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["color", 1], ["created_at", "2014-11-07 03:48:41.251685"], ["game_id", 1], ["updated_at", "2014-11-07 03:48:41.251685"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-11-07 03:53:27.165630"], ["updated_at", "2014-11-07 03:53:27.165630"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["color", 1], ["created_at", "2014-11-07 03:53:27.228030"], ["game_id", 1], ["updated_at", "2014-11-07 03:53:27.228030"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
