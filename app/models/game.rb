@@ -38,10 +38,12 @@ class Game < ActiveRecord::Base
   end
   
   def raffle_goals
-    unused_colors = (0...MAX_COLORS).to_a - self.players.map(&:color)
+    unused_colors = ((0...MAX_COLORS).to_a - self.players.map(&:color))
     goals = self.n_goals.times.to_a.reject{|c| unused_colors.include? c}
+    used_goals = []
     self.players.each do |player|
-      player.goal_id = (goals - [player.color]).sample
+      player.goal_id = (goals - [player.color] - used_goals).sample
+      used_goals << player.goal_id
       player.save
     end
   end
