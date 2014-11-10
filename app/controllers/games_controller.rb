@@ -10,7 +10,7 @@ class GamesController < ApplicationController
   
   def start
     game = Game.in_room.find params[:game_id]
-    game.start
+    game.start unless game.active
     render :json => game.full_json
   end
   

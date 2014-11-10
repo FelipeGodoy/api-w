@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030190913) do
+ActiveRecord::Schema.define(version: 20141110193454) do
 
   create_table "games", force: true do |t|
     t.string   "name"
     t.integer  "n_territories"
     t.integer  "n_goals"
-    t.boolean  "active"
+    t.boolean  "active",        default: false
     t.boolean  "in_room"
     t.datetime "created_at"
     t.datetime "updated_at"

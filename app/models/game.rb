@@ -1,13 +1,15 @@
 class Game < ActiveRecord::Base
   
-  has_many :players
-  has_many :shots
+  MAX_COLORS = 6
+  
+  has_many :players, :dependent => :delete_all
+  has_many :shots, :dependent => :delete_all
   
   scope :actives, ->{where(:active=> true)}
   scope :in_room, ->{where(:in_room => true)}
   
   def raffle_color
-    colors = (1..6).to_a
+    colors = (0...MAX_COLORS).to_a
     used_colors = self.players.map(&:color)
     colors.reject{|c| used_colors.include?(c)}.sample
   end
@@ -29,15 +31,15 @@ class Game < ActiveRecord::Base
   
   def full_json
     players = JSON.parse self.players.to_json
-    players.each do |player| player["init_territories"] = eval(player["init_territories"]) end
+    players.each do |player| player["init_territories"] = eval(player["init_territories"]) if player["init_territories"].present? end 
     json = JSON.parse self.to_json
     json["players"] = players
     json.to_json
   end
   
   def raffle_goals
-    colors = self.players.map(&:color)
-    goals = self.n_goals.times.to_a.reject{|c| colors.include? c}
+    unused_colors = (0...MAX_COLORS).to_a - self.players.map(&:color)
+    goals = self.n_goals.times.to_a.reject{|c| unused_colors.include? c}
     self.players.each do |player|
       player.goal_id = (goals - [player.color]).sample
       player.save
@@ -61,7 +63,7 @@ class Game < ActiveRecord::Base
   def raffle_order
     players = self.players.shuffle
     players.each_with_index do |player, index|
-      player.order = index + 1
+      player.order = index
       player.save
     end
   end
