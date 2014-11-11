@@ -13,7 +13,12 @@ class Game < ActiveRecord::Base
     used_colors = self.players.map(&:color)
     colors.reject{|c| used_colors.include?(c)}.sample
   end
-  
+
+  def in_room
+    self.in_room = true
+    self.save
+  end
+
   def start
     self.raffle_goals
     self.raffle_territories
