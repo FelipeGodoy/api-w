@@ -14,11 +14,6 @@ class Game < ActiveRecord::Base
     colors.reject{|c| used_colors.include?(c)}.sample
   end
 
-  def in_room
-    self.in_room = true
-    self.save
-  end
-
   def start
     self.raffle_goals
     self.raffle_territories

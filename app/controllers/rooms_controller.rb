@@ -16,7 +16,6 @@ class RoomsController < ApplicationController
 
   def connect
     game = Game.in_room.find(params[:game_id])
-#    binding.pry
     if game.present?
       params.permit!
       p = Player.new(params[:player])

@@ -16,6 +16,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'rspec-rails'
   gem 'mocha'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :production do

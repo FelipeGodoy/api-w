@@ -8,14 +8,8 @@ class GamesController < ApplicationController
       game = Game.find params[:id]
       render :json => game.full_json
     else
-      render :json, status => 400
+      render :json => {:error => "Can't show a game without game_id!"}.to_json
     end
-  end
-
-  def room_true
-    game = Game.find params[:game_id]
-    game.in_room
-    render :json => game.full_json
   end
 
   def start
@@ -24,20 +18,29 @@ class GamesController < ApplicationController
       game.start if game.active
       render :json => game.full_json
     else
-      render :json, :status => 400
+      render :json => {:error => "Can't start a game without game_id!"}.to_json
     end
   end
 
   def close
-    game = Game.find params[:game_id]
-    game.close
-    render :json => game.full_json
+    if params[:game_id]
+      game = Game.find params[:game_id]
+      game.close
+      render :json => game.full_json
+    else
+      render :json => {:error => "Can't close a game without game_id!"}.to_json
+    end
+
   end
 
   def get_shots
-    game = Game.actives.find params[:game_id]
-    shots = game.shots.where("index_in_game > ?", params[:shot_id])
-    render :json => shots.to_json
+    if params[:game_id]
+      game = Game.actives.find params[:game_id]
+      shots = game.shots.where("index_in_game > ?", params[:shot_id])
+      render :json => shots.to_json
+    else
+      render :json => {:error => "Can't find shots without game_id!"}.to_json
+    end
   end
 
   def reset_shots
