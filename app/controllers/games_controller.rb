@@ -9,7 +9,7 @@ class GamesController < ApplicationController
 	  order = game.players.map(&:order)
       render :json => game.full_json
     else
-      render :json => {:error => "Can't show a game without game_id!"}.to_json
+      render :json => {:error => "Can't show a game without id!"}.to_json
     end
   end
   
