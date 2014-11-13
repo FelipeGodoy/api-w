@@ -982,3 +982,159 @@ Completed 200 OK in 43ms (Views: 0.4ms | ActiveRecord: 1.5ms)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)  [["color", 1], ["created_at", "2014-11-13 21:13:44.421524"], ["game_id", 1], ["updated_at", "2014-11-13 21:13:44.421524"]]
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["active", "t"], ["created_at", "2014-11-13 23:03:35.267719"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:35.267719"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["color", 3], ["created_at", "2014-11-13 23:03:35.307719"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:35.307719"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 80ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["active", "t"], ["created_at", "2014-11-13 23:03:35.407719"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:35.407719"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["color", 3], ["created_at", "2014-11-13 23:03:35.407719"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:35.407719"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 210ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["active", "t"], ["created_at", "2014-11-13 23:03:35.637719"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:35.637719"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["color", 3], ["created_at", "2014-11-13 23:03:35.637719"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:35.637719"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by GamesController#start as HTML
+  Parameters: {"game_id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["active", "t"], ["created_at", "2014-11-13 23:03:35.647719"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:35.647719"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["color", 3], ["created_at", "2014-11-13 23:03:35.657719"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:35.657719"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by GamesController#close as HTML
+  Parameters: {"game_id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "games" SET "active" = ?, "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 1  [["active", "f"], ["in_room", "f"], ["updated_at", "2014-11-13 23:03:35.657719"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["active", "t"], ["created_at", "2014-11-13 23:03:35.677719"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:35.677719"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["color", 3], ["created_at", "2014-11-13 23:03:35.677719"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:35.677719"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by GamesController#clear as HTML
+  Parameters: {"game_id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "players" WHERE "players"."id" = ?  [["id", 1]]
+  [1m[36mShot Load (0.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "games" WHERE "games"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 20ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-11-13 23:03:35.787720"], ["updated_at", "2014-11-13 23:03:35.787720"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)  [["color", 1], ["created_at", "2014-11-13 23:03:35.797720"], ["game_id", 1], ["updated_at", "2014-11-13 23:03:35.797720"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["active", "t"], ["created_at", "2014-11-13 23:03:57.657759"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:57.657759"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["color", 3], ["created_at", "2014-11-13 23:03:57.677759"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:57.677759"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 70ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["active", "t"], ["created_at", "2014-11-13 23:03:57.757759"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:57.757759"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["color", 3], ["created_at", "2014-11-13 23:03:57.767759"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:57.767759"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (10.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 80ms (Views: 0.0ms | ActiveRecord: 10.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["active", "t"], ["created_at", "2014-11-13 23:03:57.847759"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:57.847759"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["color", 3], ["created_at", "2014-11-13 23:03:57.857759"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:57.857759"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by GamesController#start as HTML
+  Parameters: {"game_id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["active", "t"], ["created_at", "2014-11-13 23:03:57.877759"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:57.877759"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["color", 3], ["created_at", "2014-11-13 23:03:57.877759"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:57.877759"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by GamesController#close as HTML
+  Parameters: {"game_id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "games" SET "active" = ?, "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 1  [["active", "f"], ["in_room", "f"], ["updated_at", "2014-11-13 23:03:57.937759"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "games" ("active", "created_at", "in_room", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["active", "t"], ["created_at", "2014-11-13 23:03:57.957760"], ["in_room", "t"], ["n_goals", 10], ["n_territories", 42], ["name", "teste"], ["updated_at", "2014-11-13 23:03:57.957760"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "goal_id", "name", "order", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["color", 3], ["created_at", "2014-11-13 23:03:57.957760"], ["game_id", 1], ["goal_id", 2], ["name", "player"], ["order", 1], ["type_id", 1], ["updated_at", "2014-11-13 23:03:57.957760"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by GamesController#clear as HTML
+  Parameters: {"game_id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "players" WHERE "players"."id" = ?  [["id", 1]]
+  [1m[36mShot Load (0.0ms)[0m  [1mSELECT "shots".* FROM "shots"  WHERE "shots"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "games" WHERE "games"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 10ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-11-13 23:03:57.997760"], ["updated_at", "2014-11-13 23:03:57.997760"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "updated_at") VALUES (?, ?, ?, ?)  [["color", 1], ["created_at", "2014-11-13 23:03:57.997760"], ["game_id", 1], ["updated_at", "2014-11-13 23:03:57.997760"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction

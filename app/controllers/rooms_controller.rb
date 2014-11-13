@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
 
   def connect
     game = Game.in_room.find(params[:game_id])
-    if game.present?
+    if game.present? && game.players.count < 6
       params.permit!
       p = Player.new(params[:player])
       p.game = game
@@ -31,10 +31,17 @@ class RoomsController < ApplicationController
   end
   
   def disconnect
-    player = Player.find params[:player]
-    player.game = nil
-    player.save
-    render :json => player.errors.to_json
+    params[:players].each_with_index do |player_id,index|
+		player = Player.find (params["players"][index.to_s].to_i)
+		game = player.game
+		player.game = nil
+		player.destroy
+		game.reload
+		if game.players.count ==0
+			game.destroy
+		end
+	end
+    render :json => {:sucess => true}.to_json
   end
 
 end
