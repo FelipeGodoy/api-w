@@ -6,6 +6,7 @@ class GamesController < ApplicationController
   def show
     if params[:id]
       game = Game.find params[:id]
+	  order = game.players.map(&:order)
       render :json => game.full_json
     else
       render :json => {:error => "Can't show a game without game_id!"}.to_json
@@ -15,7 +16,7 @@ class GamesController < ApplicationController
   def start
     if params[:game_id]
       game = Game.in_room.find params[:game_id]
-      game.start if game.active
+      game.start unless game.active
       render :json => game.full_json
     else
       render :json => {:error => "Can't start a game without game_id!"}.to_json
@@ -36,8 +37,10 @@ class GamesController < ApplicationController
   def get_shots
     if params[:game_id]
       game = Game.actives.find params[:game_id]
-      shots = game.shots.where("index_in_game > ?", params[:shot_id])
-      render :json => shots.to_json
+      shots = game.shots.where("index_in_game > ?", params[:shot_id]).order(:index_in_game)
+	  shots_json = JSON.parse shots.to_json
+	  shots_json.each do |shot| shot["content"] = JSON.parse shot["content"] end
+      render :json => shots_json.to_json
     else
       render :json => {:error => "Can't find shots without game_id!"}.to_json
     end

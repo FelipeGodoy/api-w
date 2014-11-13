@@ -2,8 +2,8 @@ class Game < ActiveRecord::Base
   
   MAX_COLORS = 6
   
-  has_many :players, :dependent => :delete_all
-  has_many :shots, :dependent => :delete_all
+  has_many :players, :dependent => :destroy
+  has_many :shots, :dependent => :destroy
   
   scope :actives, ->{where(:active=> true)}
   scope :in_room, ->{where(:in_room => true)}
