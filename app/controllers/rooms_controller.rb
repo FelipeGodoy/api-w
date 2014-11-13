@@ -21,7 +21,6 @@ class RoomsController < ApplicationController
       p = Player.new(params[:player])
       p.game = game
       p.color = game.raffle_color
-	  p.name += game.players.count.to_s if p.type_id == 1
       p.save
       g_json = JSON.parse game.to_json
       g_json["new_player"] = JSON.parse p.to_json
