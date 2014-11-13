@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'games/start' => 'games#start', defaults: {format: :json}
   post 'games/close' => 'games#close', defaults: {format: :json}
   post 'games/shots' => 'games#add_shot', defaults: {format: :json}
+  post 'games/clear' => 'games#clear', defaults: {format: :json}
   resources :rooms,:except=>[:show] , defaults: {format: :json}
   resources :games, defaults: {format: :json}
   

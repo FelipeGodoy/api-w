@@ -12,6 +12,14 @@ class GamesController < ApplicationController
       render :json => {:error => "Can't show a game without game_id!"}.to_json
     end
   end
+  
+  def clear
+	if Game.destroy_all
+		render :json => {:sucess => :true}
+	else
+		render :json => {:sucess => :false}
+	end
+  end
 
   def start
     if params[:game_id]
