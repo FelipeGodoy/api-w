@@ -25,6 +25,7 @@ class GamesController < ApplicationController
     if params[:game_id]
       game = Game.in_room.find params[:game_id]
       game.start unless game.active
+	  Game.where("updated_at < ?", Time.now - 1.day).destroy_all
       render :json => game.full_json
     else
       render :json => {:error => "Can't start a game without game_id!"}
