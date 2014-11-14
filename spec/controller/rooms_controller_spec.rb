@@ -13,7 +13,7 @@ RSpec.describe RoomsController, :type => :controller do
       expect(response).to be_success
     end
     it "disconnect" do
-      post :disconnect, :player => @player
+      post :disconnect, :players => {"0" => @player.id}
       expect(response).to be_success
     end
   end

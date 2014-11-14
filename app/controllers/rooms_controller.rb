@@ -11,6 +11,7 @@ class RoomsController < ApplicationController
   end
 
   def index
+	Game.in_room.where("updated_at < ?", Time.now - 10.minutes).destroy_all
     render :json => Game.in_room.to_json
   end
 
@@ -22,6 +23,8 @@ class RoomsController < ApplicationController
       p.game = game
       p.color = game.raffle_color
       p.save
+	  game.updated_at = Time.now
+	  game.save
       g_json = JSON.parse game.to_json
       g_json["new_player"] = JSON.parse p.to_json
       render :json => g_json.to_json
@@ -37,6 +40,8 @@ class RoomsController < ApplicationController
 		player.game = nil
 		player.destroy
 		game.reload
+		game.updated_at = Time.now
+		game.save
 		if game.players.count ==0
 			game.destroy
 		end
