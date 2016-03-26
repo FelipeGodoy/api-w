@@ -4192,3 +4192,967 @@ Migrating to AddDefaultFalseToColumnActiveInGames (20141110193454)
   [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141110193454"]]
   [1m[36m (119.0ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (234.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (121.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTestes (20141005125815)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "testes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141005125815"]]
+  [1m[35m (110.4ms)[0m  commit transaction
+Migrating to CreateGames (20141023224615)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "n_territories" integer, "n_goals" integer, "active" boolean, "in_room" boolean, "created_at" datetime, "updated_at" datetime, "infos" text) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023224615"]]
+  [1m[35m (93.8ms)[0m  commit transaction
+Migrating to CreatePlayers (20141023230132)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "game_id" integer, "type_id" integer, "goal_id" integer, "order" integer, "color" integer, "init_territories" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023230132"]]
+  [1m[35m (98.5ms)[0m  commit transaction
+Migrating to CreateShots (20141030190913)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "shots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "game_id" integer, "index_in_game" integer, "content" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141030190913"]]
+  [1m[35m (110.3ms)[0m  commit transaction
+Migrating to AddDefaultFalseToColumnActiveInGames (20141110193454)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  CREATE TEMPORARY TABLE "agames" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "n_territories" integer, "n_goals" integer, "active" boolean, "in_room" boolean, "created_at" datetime, "updated_at" datetime, "infos" text) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "games"[0m
+  [1m[35m (0.0ms)[0m  DROP TABLE "games"
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "n_territories" integer, "n_goals" integer, "active" boolean DEFAULT 'f', "in_room" boolean, "created_at" datetime, "updated_at" datetime, "infos" text) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "agames"
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE "agames"[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141110193454"]]
+  [1m[36m (125.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-19 15:14:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."in_room" = 't' AND (updated_at < '2016-03-19 17:54:31.629105')
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."in_room" = 't'[0m
+Completed 200 OK in 46ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-19 15:14:36 -0300
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2016-03-19 15:15:05 -0300
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"name"=>"asdfadf", "n_territories"=>"42", "n_goals"=>"16", "infos"=>"0.1b"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "games" ("created_at", "in_room", "infos", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2016-03-19 18:15:05.430497"], ["in_room", "t"], ["infos", "0.1b"], ["n_goals", 16], ["n_territories", 42], ["name", "asdfadf"], ["updated_at", "2016-03-19 18:15:05.430497"]]
+  [1m[36m (112.4ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 138ms (Views: 0.2ms | ActiveRecord: 114.4ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 15:15:05 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"asdfasdfasd", "type_id"=>"0"}, "game_id"=>"1"}
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["color", 1], ["created_at", "2016-03-19 18:15:05.666978"], ["game_id", 1], ["name", "asdfasdfasd"], ["type_id", 0], ["updated_at", "2016-03-19 18:15:05.666978"]]
+  [1m[36m (91.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mUPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 1[0m  [["updated_at", "2016-03-19 18:15:05.758598"]]
+  [1m[35m (75.4ms)[0m  commit transaction
+Completed 200 OK in 253ms (Views: 0.1ms | ActiveRecord: 170.0ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2016-03-19 15:15:07 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2016-03-19 15:15:08 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 15:15:08 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"Ana", "type_id"=>"1"}, "game_id"=>"1"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["color", 3], ["created_at", "2016-03-19 18:15:08.933628"], ["game_id", 1], ["name", "Ana"], ["type_id", 1], ["updated_at", "2016-03-19 18:15:08.933628"]]
+  [1m[35m (100.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 1  [["updated_at", "2016-03-19 18:15:09.036862"]]
+  [1m[36m (79.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 193ms (Views: 0.1ms | ActiveRecord: 182.3ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2016-03-19 15:15:09 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mGame Load (0.9ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2016-03-19 15:15:10 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 15:15:10 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"Carlos", "type_id"=>"1"}, "game_id"=>"1"}
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["color", 2], ["created_at", "2016-03-19 18:15:10.936251"], ["game_id", 1], ["name", "Carlos"], ["type_id", 1], ["updated_at", "2016-03-19 18:15:10.936251"]]
+  [1m[36m (115.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 1[0m  [["updated_at", "2016-03-19 18:15:11.057363"]]
+  [1m[35m (59.3ms)[0m  commit transaction
+Completed 200 OK in 188ms (Views: 0.1ms | ActiveRecord: 178.9ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2016-03-19 15:15:11 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2016-03-19 15:15:12 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2016-03-19 15:15:13 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/start.json" for 127.0.0.1 at 2016-03-19 15:15:13 -0300
+Processing by GamesController#start as JSON
+  Parameters: {"game_id"=>"1"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 1  [["goal_id", 9], ["updated_at", "2016-03-19 18:15:13.251954"]]
+  [1m[36m (100.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["goal_id", 11], ["updated_at", "2016-03-19 18:15:13.357547"]]
+  [1m[35m (72.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 3  [["goal_id", 7], ["updated_at", "2016-03-19 18:15:13.434603"]]
+  [1m[36m (70.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["init_territories", "[6,10,31,26,19,30,21,29,35,5,11,37,12,15]"], ["updated_at", "2016-03-19 18:15:13.587730"]]
+  [1m[35m (74.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["init_territories", "[20,13,0,22,25,41,9,18,7,40,24,2,39,23]"], ["updated_at", "2016-03-19 18:15:13.668300"]]
+  [1m[36m (66.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 3[0m  [["init_territories", "[36,33,3,34,38,4,32,16,28,1,8,17,14,27]"], ["updated_at", "2016-03-19 18:15:13.737346"]]
+  [1m[35m (71.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 1  [["order", 0], ["updated_at", "2016-03-19 18:15:13.810699"]]
+  [1m[36m (51.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 3[0m  [["order", 1], ["updated_at", "2016-03-19 18:15:13.866737"]]
+  [1m[35m (71.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 2  [["order", 2], ["updated_at", "2016-03-19 18:15:13.944393"]]
+  [1m[36m (68.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (2.5ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "games" SET "active" = ?, "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 1[0m  [["active", "t"], ["in_room", "f"], ["updated_at", "2016-03-19 18:15:14.036295"]]
+  [1m[35m (78.5ms)[0m  commit transaction
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE (updated_at < '2016-03-18 18:15:14.119809')[0m
+Completed 200 OK in 890ms (Views: 0.1ms | ActiveRecord: 744.6ms)
+
+
+Started GET "/games/1.json" for 127.0.0.1 at 2016-03-19 15:15:14 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2016-03-19 15:18:28 -0300
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"name"=>"fasdfasdf", "n_territories"=>"42", "n_goals"=>"16", "infos"=>"0.1b"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "games" ("created_at", "in_room", "infos", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2016-03-19 18:18:28.602395"], ["in_room", "t"], ["infos", "0.1b"], ["n_goals", 16], ["n_territories", 42], ["name", "fasdfasdf"], ["updated_at", "2016-03-19 18:18:28.602395"]]
+  [1m[35m (172.5ms)[0m  commit transaction
+Completed 200 OK in 181ms (Views: 0.1ms | ActiveRecord: 174.0ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 15:18:28 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"asdfasd", "type_id"=>"0"}, "game_id"=>"2"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["color", 1], ["created_at", "2016-03-19 18:18:28.828417"], ["game_id", 2], ["name", "asdfasd"], ["type_id", 0], ["updated_at", "2016-03-19 18:18:28.828417"]]
+  [1m[35m (79.0ms)[0m  commit transaction
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 2  [["updated_at", "2016-03-19 18:18:28.912991"]]
+  [1m[36m (61.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 161ms (Views: 0.1ms | ActiveRecord: 146.3ms)
+
+
+Started GET "/games/2.json" for 127.0.0.1 at 2016-03-19 15:18:30 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 15:18:30 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"Vinicius", "type_id"=>"1"}, "game_id"=>"2"}
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["color", 0], ["created_at", "2016-03-19 18:18:30.963959"], ["game_id", 2], ["name", "Vinicius"], ["type_id", 1], ["updated_at", "2016-03-19 18:18:30.963959"]]
+  [1m[36m (125.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 2[0m  [["updated_at", "2016-03-19 18:18:31.095797"]]
+  [1m[35m (60.0ms)[0m  commit transaction
+Completed 200 OK in 205ms (Views: 0.1ms | ActiveRecord: 189.8ms)
+
+
+Started GET "/games/2.json" for 127.0.0.1 at 2016-03-19 15:18:31 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/games/2.json" for 127.0.0.1 at 2016-03-19 15:18:32 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (1.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/games/start.json" for 127.0.0.1 at 2016-03-19 15:18:32 -0300
+Processing by GamesController#start as JSON
+  Parameters: {"game_id"=>"2"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 4  [["goal_id", 0], ["updated_at", "2016-03-19 18:18:32.398422"]]
+  [1m[36m (86.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.5ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 5[0m  [["goal_id", 6], ["updated_at", "2016-03-19 18:18:32.491757"]]
+  [1m[35m (59.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 4  [["init_territories", "[1,29,31,35,8,30,36,13,37,32,14,16,21,6,20,3,24,19,2,27,26]"], ["updated_at", "2016-03-19 18:18:32.653330"]]
+  [1m[36m (119.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 5[0m  [["init_territories", "[9,40,10,12,23,11,5,38,0,4,17,25,33,22,15,41,39,18,7,34,28]"], ["updated_at", "2016-03-19 18:18:32.776237"]]
+  [1m[35m (77.6ms)[0m  commit transaction
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 4  [["order", 0], ["updated_at", "2016-03-19 18:18:32.857297"]]
+  [1m[36m (82.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 5[0m  [["order", 1], ["updated_at", "2016-03-19 18:18:32.944618"]]
+  [1m[35m (87.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (16.6ms)[0m  UPDATE "games" SET "active" = ?, "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 2  [["active", "t"], ["in_room", "f"], ["updated_at", "2016-03-19 18:18:33.035728"]]
+  [1m[36m (98.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mGame Load (0.5ms)[0m  SELECT "games".* FROM "games"  WHERE (updated_at < '2016-03-18 18:18:33.154511')
+Completed 200 OK in 767ms (Views: 0.1ms | ActiveRecord: 639.3ms)
+
+
+Started GET "/games/2.json" for 127.0.0.1 at 2016-03-19 15:18:33 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 2]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2016-03-19 18:19:03 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"name"=>"dsafg", "n_territories"=>"42", "n_goals"=>"16", "infos"=>"0.1b"}}
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "games" ("created_at", "in_room", "infos", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2016-03-19 21:19:04.010864"], ["in_room", "t"], ["infos", "0.1b"], ["n_goals", 16], ["n_territories", 42], ["name", "dsafg"], ["updated_at", "2016-03-19 21:19:04.010864"]]
+  [1m[35m (114.3ms)[0m  commit transaction
+Completed 200 OK in 175ms (Views: 0.1ms | ActiveRecord: 116.3ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 18:19:04 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"sdfgsdfg", "type_id"=>"0"}, "game_id"=>"3"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["color", 0], ["created_at", "2016-03-19 21:19:04.301576"], ["game_id", 3], ["name", "sdfgsdfg"], ["type_id", 0], ["updated_at", "2016-03-19 21:19:04.301576"]]
+  [1m[35m (52.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 3  [["updated_at", "2016-03-19 21:19:04.357264"]]
+  [1m[36m (67.5ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 239ms (Views: 0.1ms | ActiveRecord: 123.7ms)
+
+
+Started GET "/games/3.json" for 127.0.0.1 at 2016-03-19 18:19:05 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 18:19:06 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"Gisele", "type_id"=>"1"}, "game_id"=>"3"}
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (47.2ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["color", 2], ["created_at", "2016-03-19 21:19:06.302494"], ["game_id", 3], ["name", "Gisele"], ["type_id", 1], ["updated_at", "2016-03-19 21:19:06.302494"]]
+  [1m[36m (93.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mUPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 3[0m  [["updated_at", "2016-03-19 21:19:06.445619"]]
+  [1m[35m (62.4ms)[0m  commit transaction
+Completed 200 OK in 218ms (Views: 0.1ms | ActiveRecord: 206.0ms)
+
+
+Started GET "/games/3.json" for 127.0.0.1 at 2016-03-19 18:19:06 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPlayer Load (0.6ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/games/3.json" for 127.0.0.1 at 2016-03-19 18:19:07 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPlayer Load (1.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 18:19:07 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"Paulo", "type_id"=>"1"}, "game_id"=>"3"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (43.4ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["color", 5], ["created_at", "2016-03-19 21:19:07.681936"], ["game_id", 3], ["name", "Paulo"], ["type_id", 1], ["updated_at", "2016-03-19 21:19:07.681936"]]
+  [1m[35m (84.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 3  [["updated_at", "2016-03-19 21:19:07.811961"]]
+  [1m[36m (51.6ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 190ms (Views: 0.1ms | ActiveRecord: 181.2ms)
+
+
+Started GET "/games/3.json" for 127.0.0.1 at 2016-03-19 18:19:08 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/games/3.json" for 127.0.0.1 at 2016-03-19 18:19:09 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/start.json" for 127.0.0.1 at 2016-03-19 18:19:10 -0300
+Processing by GamesController#start as JSON
+  Parameters: {"game_id"=>"3"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mPlayer Load (16.1ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 6[0m  [["goal_id", 2], ["updated_at", "2016-03-19 21:19:10.097245"]]
+  [1m[35m (116.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (11.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 7  [["goal_id", 5], ["updated_at", "2016-03-19 21:19:10.215637"]]
+  [1m[36m (99.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 8[0m  [["goal_id", 11], ["updated_at", "2016-03-19 21:19:10.326805"]]
+  [1m[35m (70.6ms)[0m  commit transaction
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 6  [["init_territories", "[14,28,36,18,19,20,7,13,15,31,0,12,23,39]"], ["updated_at", "2016-03-19 21:19:10.492935"]]
+  [1m[36m (71.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 7[0m  [["init_territories", "[37,4,5,27,9,10,2,30,25,38,40,1,29,26]"], ["updated_at", "2016-03-19 21:19:10.569097"]]
+  [1m[35m (61.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 8  [["init_territories", "[11,24,6,32,16,21,41,22,3,35,33,17,8,34]"], ["updated_at", "2016-03-19 21:19:10.635945"]]
+  [1m[36m (58.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 8[0m  [["order", 0], ["updated_at", "2016-03-19 21:19:10.697637"]]
+  [1m[35m (64.7ms)[0m  commit transaction
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 6  [["order", 1], ["updated_at", "2016-03-19 21:19:10.764367"]]
+  [1m[36m (59.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 7[0m  [["order", 2], ["updated_at", "2016-03-19 21:19:10.826977"]]
+  [1m[35m (68.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "games" SET "active" = ?, "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 3  [["active", "t"], ["in_room", "f"], ["updated_at", "2016-03-19 21:19:10.897238"]]
+  [1m[36m (64.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mGame Load (0.5ms)[0m  SELECT "games".* FROM "games"  WHERE (updated_at < '2016-03-18 21:19:10.962416')
+Completed 200 OK in 891ms (Views: 0.1ms | ActiveRecord: 772.2ms)
+
+
+Started GET "/games/3.json" for 127.0.0.1 at 2016-03-19 18:19:10 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 3]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2016-03-19 18:20:51 -0300
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"name"=>"Dd", "n_territories"=>"42", "n_goals"=>"16", "infos"=>"0.1b"}}
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "games" ("created_at", "in_room", "infos", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2016-03-19 21:20:51.630629"], ["in_room", "t"], ["infos", "0.1b"], ["n_goals", 16], ["n_territories", 42], ["name", "Dd"], ["updated_at", "2016-03-19 21:20:51.630629"]]
+  [1m[36m (92.4ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 98ms (Views: 0.1ms | ActiveRecord: 94.4ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 18:20:51 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"fasdfasdf", "type_id"=>"0"}, "game_id"=>"4"}
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["color", 3], ["created_at", "2016-03-19 21:20:51.786141"], ["game_id", 4], ["name", "fasdfasdf"], ["type_id", 0], ["updated_at", "2016-03-19 21:20:51.786141"]]
+  [1m[36m (75.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.5ms)[0m  [1mUPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 4[0m  [["updated_at", "2016-03-19 21:20:51.863979"]]
+  [1m[35m (55.3ms)[0m  commit transaction
+Completed 200 OK in 160ms (Views: 0.1ms | ActiveRecord: 134.7ms)
+
+
+Started GET "/games/4.json" for 127.0.0.1 at 2016-03-19 18:20:53 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 18:20:53 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"Thadeu", "type_id"=>"1"}, "game_id"=>"4"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["color", 5], ["created_at", "2016-03-19 21:20:53.255205"], ["game_id", 4], ["name", "Thadeu"], ["type_id", 1], ["updated_at", "2016-03-19 21:20:53.255205"]]
+  [1m[35m (112.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 4  [["updated_at", "2016-03-19 21:20:53.372184"]]
+  [1m[36m (72.5ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 209ms (Views: 0.1ms | ActiveRecord: 190.0ms)
+
+
+Started GET "/games/4.json" for 127.0.0.1 at 2016-03-19 18:20:54 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/4.json" for 127.0.0.1 at 2016-03-19 18:20:55 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mGame Load (0.5ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 18:20:55 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"Fabiane", "type_id"=>"1"}, "game_id"=>"4"}
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["color", 4], ["created_at", "2016-03-19 21:20:55.456065"], ["game_id", 4], ["name", "Fabiane"], ["type_id", 1], ["updated_at", "2016-03-19 21:20:55.456065"]]
+  [1m[36m (71.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mUPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 4[0m  [["updated_at", "2016-03-19 21:20:55.533139"]]
+  [1m[35m (82.4ms)[0m  commit transaction
+Completed 200 OK in 177ms (Views: 0.1ms | ActiveRecord: 158.5ms)
+
+
+Started GET "/games/4.json" for 127.0.0.1 at 2016-03-19 18:20:56 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+Completed 200 OK in 26ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games/4.json" for 127.0.0.1 at 2016-03-19 18:20:57 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayer Load (15.6ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/games/start.json" for 127.0.0.1 at 2016-03-19 18:20:57 -0300
+Processing by GamesController#start as JSON
+  Parameters: {"game_id"=>"4"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 9  [["goal_id", 15], ["updated_at", "2016-03-19 21:20:57.256635"]]
+  [1m[36m (111.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 10[0m  [["goal_id", 11], ["updated_at", "2016-03-19 21:20:57.369840"]]
+  [1m[35m (50.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 11  [["goal_id", 8], ["updated_at", "2016-03-19 21:20:57.424922"]]
+  [1m[36m (74.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (4.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 9[0m  [["init_territories", "[37,18,35,5,7,40,41,28,23,17,25,32,31,0]"], ["updated_at", "2016-03-19 21:20:57.595314"]]
+  [1m[35m (88.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 10  [["init_territories", "[30,11,29,26,36,27,24,13,6,2,12,3,15,19]"], ["updated_at", "2016-03-19 21:20:57.690795"]]
+  [1m[36m (73.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 11[0m  [["init_territories", "[4,10,22,14,39,33,20,1,21,34,38,8,9,16]"], ["updated_at", "2016-03-19 21:20:57.769202"]]
+  [1m[35m (54.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 9  [["order", 0], ["updated_at", "2016-03-19 21:20:57.826606"]]
+  [1m[36m (87.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 11[0m  [["order", 1], ["updated_at", "2016-03-19 21:20:57.933997"]]
+  [1m[35m (68.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 10  [["order", 2], ["updated_at", "2016-03-19 21:20:58.005978"]]
+  [1m[36m (70.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "games" SET "active" = ?, "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 4[0m  [["active", "t"], ["in_room", "f"], ["updated_at", "2016-03-19 21:20:58.076908"]]
+  [1m[35m (76.6ms)[0m  commit transaction
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE (updated_at < '2016-03-18 21:20:58.154545')[0m
+Completed 200 OK in 903ms (Views: 0.1ms | ActiveRecord: 771.3ms)
+
+
+Started GET "/games/4.json" for 127.0.0.1 at 2016-03-19 18:20:58 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mGame Load (1.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 4]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/rooms.json" for 127.0.0.1 at 2016-03-19 18:28:17 -0300
+Processing by RoomsController#create as JSON
+  Parameters: {"game"=>{"name"=>"sdfgsdfg", "n_territories"=>"42", "n_goals"=>"16", "infos"=>"0.1b"}}
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "games" ("created_at", "in_room", "infos", "n_goals", "n_territories", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2016-03-19 21:28:17.194120"], ["in_room", "t"], ["infos", "0.1b"], ["n_goals", 16], ["n_territories", 42], ["name", "sdfgsdfg"], ["updated_at", "2016-03-19 21:28:17.194120"]]
+  [1m[35m (99.4ms)[0m  commit transaction
+Completed 200 OK in 111ms (Views: 0.3ms | ActiveRecord: 101.9ms)
+
+
+Started POST "/rooms/connect.json" for 127.0.0.1 at 2016-03-19 18:28:17 -0300
+Processing by RoomsController#connect as JSON
+  Parameters: {"player"=>{"name"=>"sdfgsdfg", "type_id"=>"0"}, "game_id"=>"5"}
+  [1m[36mGame Load (0.5ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "players" ("color", "created_at", "game_id", "name", "type_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["color", 3], ["created_at", "2016-03-19 21:28:17.355619"], ["game_id", 5], ["name", "sdfgsdfg"], ["type_id", 0], ["updated_at", "2016-03-19 21:28:17.355619"]]
+  [1m[35m (54.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "games" SET "updated_at" = ? WHERE "games"."id" = 5  [["updated_at", "2016-03-19 21:28:17.414334"]]
+  [1m[36m (69.5ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 142ms (Views: 0.1ms | ActiveRecord: 127.2ms)
+
+
+Started GET "/games/5.json" for 127.0.0.1 at 2016-03-19 18:28:18 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games/start.json" for 127.0.0.1 at 2016-03-19 18:28:19 -0300
+Processing by GamesController#start as JSON
+  Parameters: {"game_id"=>"5"}
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games"  WHERE "games"."in_room" = 't' AND "games"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPlayer Load (0.0ms)[0m  [1mSELECT "players".* FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "players" SET "goal_id" = ?, "updated_at" = ? WHERE "players"."id" = 12[0m  [["goal_id", 6], ["updated_at", "2016-03-19 21:28:19.613917"]]
+  [1m[35m (142.3ms)[0m  commit transaction
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?[0m  [["game_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  UPDATE "players" SET "init_territories" = ?, "updated_at" = ? WHERE "players"."id" = 12  [["init_territories", "[23,32,39,34,15,2,10,19,12,3,11,9,35,25,37,8,20,27,13,33,38,14,41,6,0,1,16,7,21,28,29,24,22,17,30,40,36,26,18,31,5,4]"], ["updated_at", "2016-03-19 21:28:19.850911"]]
+  [1m[36m (64.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mUPDATE "players" SET "order" = ?, "updated_at" = ? WHERE "players"."id" = 12[0m  [["order", 0], ["updated_at", "2016-03-19 21:28:19.920629"]]
+  [1m[35m (60.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "games" SET "active" = ?, "in_room" = ?, "updated_at" = ? WHERE "games"."id" = 5  [["active", "t"], ["in_room", "f"], ["updated_at", "2016-03-19 21:28:19.983959"]]
+  [1m[36m (98.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE (updated_at < '2016-03-18 21:28:20.082919')
+Completed 200 OK in 470ms (Views: 0.1ms | ActiveRecord: 369.8ms)
+
+
+Started GET "/games/5.json" for 127.0.0.1 at 2016-03-19 18:28:20 -0300
+Processing by GamesController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games"  WHERE "games"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPlayer Load (0.0ms)[0m  SELECT "players".* FROM "players"  WHERE "players"."game_id" = ?  [["game_id", 5]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-26 13:52:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#index as JSON
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `headers' for nil:NilClass):
+  app/controllers/application_controller.rb:5:in `set_access'
+
+
+  Rendered c:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered c:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (2800.6ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:52:21 -0300
+Processing by GamesController#index as JSON
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `headers' for nil:NilClass):
+  app/controllers/application_controller.rb:5:in `set_access'
+
+
+  Rendered c:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered c:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered c:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered c:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3625.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:53:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (0.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 122ms (Views: 0.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:54:01 -0300
+Processing by GamesController#index as JSON
+  [1m[36mGame Load (1.5ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:54:06 -0300
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (1.5ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:54:15 -0300
+Processing by GamesController#index as JSON
+  [1m[36mGame Load (1.5ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:54:23 -0300
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (2.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:55:21 -0300
+Processing by GamesController#index as JSON
+  [1m[36mGame Load (2.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:56:57 -0300
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (1.5ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:57:01 -0300
+Processing by GamesController#index as JSON
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:58:19 -0300
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (0.5ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:58:36 -0300
+Processing by GamesController#index as JSON
+  [1m[36mGame Load (1.5ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 25ms (Views: 1.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:59:30 -0300
+Processing by GamesController#index as JSON
+  [1m[35mGame Load (3.0ms)[0m  SELECT "games".* FROM "games"  WHERE "games"."active" = 't'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2016-03-26 13:59:37 -0300
+Processing by GamesController#index as JSON
+  [1m[36mGame Load (1.0ms)[0m  [1mSELECT "games".* FROM "games"  WHERE "games"."active" = 't'[0m
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 1.0ms)

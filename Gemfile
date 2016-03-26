@@ -6,13 +6,15 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
+gem 'rake', '10.5.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
-gem 'colorize', platforms: [:mingw, :mswin, :x64_mingw]
-gem 'win32console', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'bundler', '1.11.2', platforms: [:mingw, :mswin, :x64_mingw]
+
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'pry-debugger'
+  gem 'pry'
   gem 'awesome_print'
   gem 'rspec-rails'
   gem 'mocha'
